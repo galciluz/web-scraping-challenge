@@ -27,7 +27,7 @@ def scrape_info():
     news_p = results[0].find('div', class_='article_teaser_body').text
     date = results[0].find('div', class_='list_date').text
     mars_data["news_title"] = news_title
-    mars_data["news_links"] = news_link
+    mars_data["news_links"] = 'https://mars.nasa.gov' + news_link
     mars_data["news_p"] = news_p
     mars_data["news_date"] = date
 
@@ -47,13 +47,17 @@ def scrape_info():
     url = 'https://space-facts.com/mars/'
     tables = pd.read_html(url)
     mars_df = tables[0]
-    mars_df.columns = ['Description ', 'Mars']
-    mars_df.set_index('Description ', inplace=True)
+    mars_df.columns = ['Description', 'Mars']
+    mars_df.set_index('Description', inplace=True)
     # create a html table of mars facts
     mars_df.to_html('mars_table.html')
-
+    mars_df=mars_df.reset_index()
+    mars_value=mars_df['Mars']
+    mars_title=mars_title=['EquDia','PolDia','Mas','Moo','OrbDis','OrbPer','SurTem','FirRec','RecBy']
+    mars_table= dict(zip(mars_title, mars_value))
+    mars_data['mars_table']=mars_table
+    
     # fuction to get the full size image url from Mars Hemispheres
-
 
     def mars_hemispheres(url):
         browser.visit(url)
@@ -97,8 +101,7 @@ def scrape_info():
     ]
 
     mars_data["hem_img_url"] = hemisphere_image_urls
-
-    #browser.quit()
+    browser.quit()
 
     # Return results
     return mars_data

@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'open sans';
+}
+
+.container{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.title{
+    color:red;
+    font-size: 30px;
+    text-align: center;    
+}
+
+/*header*/
+header{
+    width: 100%;
+    height: 100%;
+    background: #EF3B36;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, hsla(0, 0%, 100%, 0.616), hsla(2, 85%, 57%, 0.322)), url(../images/mission_to_mars.png);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, hsla(0, 0%, 100%, 0.603), hsla(2, 85%, 57%, 0.521)), url(../images/mission_to_mars.png); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position:relative;
+}
+
+header .text-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align:  center;
+    flex-direction: column;
+}
+
+header h1{
+    font-size: 50px;
+    color: white;
+}
+
+header p{
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.feature{
+    background: #f2f2f2;
+}
+
+/*feautured*/
+.feature img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*hemisphere*/
+.hemisphere{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container-image{
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+    
+}
+
+.hemisphere h2{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+
+
+/*footer*/
+.container-footer{
+    border: none;
+    text-align: center;
+    color: #ccc;
+    background: gray;
+
+}
+
